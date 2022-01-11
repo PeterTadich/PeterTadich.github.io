@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WebSocket Test</title>
+        <style type="text/css">
+            /* IMPORTANT: */
+            *{ margin: 0; padding: 0; border: 0;}
+
+            /* IMPORTANT: */
+            html, body {
+                height:100%;
+            }
+            
+            #container{
+                position: relative;
+                height: 100%;
+                width: 100%;
+            }
+            #robotCanvas{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                !border: 1px solid red;
+            }
+        </style>
+        <!-- support files -->
+        <script type="text/javascript" src="matrixAlgebra.js"></script>
+        <script type="text/javascript" src="elementaryRotations.js"></script>
+        <script type="text/javascript" src="homogeneous.js"></script>
+        <script type="text/javascript" src="cube.js"></script>
+        <script type="text/javascript" src="canvasDraw.js"></script>
+    </head>
+    <script type="text/javascript">
+    </script>
+    <body>
+        <div id="container">
+            <canvas id="robotCanvas">Your browser does not support the HTML5 canvas tag.</canvas>
+        </div>
+        <script type="text/javascript">
+            var dw = 0.3;
+            var w = [[0.0],[0.0],[0.0]];
+            var q = [[0.0],[0.0],[0.0],[0.0]];
+            canvasSetup();
+            //cube3D(w,0.01);
+            
+            
+            var update = setInterval(function(){
+                cube3D(w,q,0.01);
+                w = [[dw],[dw],[dw]];
+            },250);
+            
+            
+            //skew_symmetric_matrix
+            //ref: I:\code\spatial_v2\js\inertia\inertia.js
+            function S(X){
+                var S = [
+                    [         0.0, -1.0*X[2][0],      X[1][0]],
+                    [     X[2][0],          0.0, -1.0*X[0][0]],
+                    [-1.0*X[1][0],      X[0][0],          0.0]
+                ];
+                
+                return S;
+            }
+        </script>
+    </body>
+</html>
