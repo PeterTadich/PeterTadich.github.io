@@ -137,19 +137,62 @@ function onDisconnected() {
     setConnButtonState(false);
 }
 
+
+var start = 0;
+var end = 0;
+var toSend = {};
+var raw = [];
+
 function handleNotifications(event) {
     //console.log('notification');
-    document.getElementById("BT").textContent = 'notification';
-    let value = event.target.value;
+    //document.getElementById("BT").textContent = 'notification';
+    let data = event.target.data;
     // Convert raw data bytes to character values and use these to 
     // construct a string.
+    /*
     let str = "";
-    for (let i = 0; i < value.byteLength; i++) {
-        str += String.fromCharCode(value.getUint8(i));
+    for (let i = 0; i < data.byteLength; i++) {
+        str += String.fromCharCode(data.getUint8(i));
     }
+    */
     //window.term_.io.print(str);
     //console.log(str);
-    document.getElementById("BT").textContent = str;
+    //document.getElementById("BT").textContent = str;
+    
+    for(var i=0;i < data.byteLength;i=i+1){
+        var theByte = String.fromCharCode(data.getUint8(i);
+        //console.log('Data: ', theByte);
+        raw.push(theByte);
+        
+        if(theByte === '{'.charCodeAt(0)){
+            start = 1;
+            //console.log("STARTED");
+        }
+        
+        if(theByte === '}'.charCodeAt(0)){
+            end = 1;
+            //console.log("ENDED");
+        }
+        
+        if(start === 1 && end === 1){
+            start = 0;
+            end = 0;
+            var msg = JSON.parse(raw.join(""));
+            
+            toSend = {
+                type: "message",
+                n: msg.n,
+                ex: msg.ex,
+                ey: msg.ey,
+                ez: msg.ez,
+                date: Date.now()
+            };
+            
+            document.getElementById("BT").textContent = JSON.stringify(toSend);
+            
+            raw = [];
+        }
+    }
 }
 
 function nusSendString(s) {
