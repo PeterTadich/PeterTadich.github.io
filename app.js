@@ -195,8 +195,8 @@ function handleNotifications(event) {
             document.getElementById("QTN").textContent = JSON.stringify(toSend);
             
             raw = [];
-            */
         }
+        */
     }
     
 }
