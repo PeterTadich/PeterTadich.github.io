@@ -183,8 +183,13 @@ function handleNotifications(event) {
             start = 0;
             end = 0;
             
+            document.getElementById("QTN").textContent = "here0";
+            
             raw.push("'");
             raw.unshift("'");
+            
+            document.getElementById("QTN").textContent = raw.join("");
+            
             var msg = JSON.parse(raw.join(""));
             
             document.getElementById("QTN").textContent = "here1";
