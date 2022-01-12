@@ -183,16 +183,23 @@ function handleNotifications(event) {
             start = 0;
             end = 0;
             
-            document.getElementById("QTN").textContent = "here0";
-            
             raw.push("\"");
             raw.unshift("\"");
             
             document.getElementById("QTN").textContent = raw.join("");
             
-            var msg = JSON.parse(raw.join(""));
+            const me = '{"result":true, "count":42}';
+            const obj = JSON.parse(me);
+            
+            document.getElementById("QTN").textContent = "here0";
+            
+            document.getElementById("QTN").textContent = JSON.stringify({ x: 5, y: 6 });
             
             document.getElementById("QTN").textContent = "here1";
+            
+            var msg = JSON.parse(raw.join(""));
+            
+            document.getElementById("QTN").textContent = "here2";
             
             /*
             toSend = {
