@@ -159,10 +159,11 @@ function handleNotifications(event) {
     //console.log(str);
     document.getElementById("BT").textContent = str;
     
-    /*
+    
     for(var i=0;i < str.length;i=i+1){
         //console.log('Data: ', str[i]);
         document.getElementById("QTN").textContent = str[i];
+        /*
         raw.push(str[i]);
         
         if(str[i].charCodeAt(0) === '{'.charCodeAt(0)){
@@ -194,9 +195,10 @@ function handleNotifications(event) {
             document.getElementById("QTN").textContent = JSON.stringify(toSend);
             
             raw = [];
+            */
         }
     }
-    */
+    
 }
 
 function nusSendString(s) {
