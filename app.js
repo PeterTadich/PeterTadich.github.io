@@ -145,7 +145,7 @@ var raw = [];
 
 function handleNotifications(event) {
     //console.log('notification');
-    //document.getElementById("BT").textContent = 'notification';
+    document.getElementById("BT").textContent = 'notification';
     let value = event.target.data;
     // Convert raw data bytes to character values and use these to 
     // construct a string.
