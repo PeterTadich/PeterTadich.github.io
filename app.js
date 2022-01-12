@@ -195,9 +195,8 @@ function handleNotifications(event) {
             
             raw = [];
         }
-        */
     }
-    
+    */
 }
 
 function nusSendString(s) {
