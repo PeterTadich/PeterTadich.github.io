@@ -22,7 +22,7 @@ function cube3D(w,q,dt){
         [cube.T.T0[2][0],cube.T.T0[2][1],cube.T.T0[2][2]]
     ];
     var drift = Math.sqrt(Math.pow((w[0][0] - cube.offset[0][0]),2) + Math.pow((w[1][0] - cube.offset[1][0]),2) + Math.pow((w[2][0] - cube.offset[2][0]),2));
-    console.log('drift: ' + drift);
+    //console.log('drift: ' + drift);
     if(drift < 0.2){
         var Rk1 = rotation_normalization(update_orientation(Rk,[[0.0],[0.0],[0.0]],dt));
     } else {
