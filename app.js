@@ -183,8 +183,11 @@ function handleNotifications(event) {
             start = 0;
             end = 0;
             
-            /*
+            raw.push("'");
+            raw.unshift("'");
             var msg = JSON.parse(raw.join(""));
+            
+            document.getElementById("QTN").textContent = "here1";
             
             toSend = {
                 type: "message",
@@ -195,10 +198,11 @@ function handleNotifications(event) {
                 date: Date.now()
             };
             
-            document.getElementById("QTN").textContent = JSON.stringify(toSend);
-            */
+            document.getElementById("QTN").textContent = "here2";
             
-            document.getElementById("QTN").textContent = raw.join("");
+            document.getElementById("QTN").textContent = JSON.stringify(toSend);
+            
+            //document.getElementById("QTN").textContent = raw.join("");
             
             raw = [];
         }
