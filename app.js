@@ -146,33 +146,34 @@ var raw = [];
 function handleNotifications(event) {
     //console.log('notification');
     //document.getElementById("BT").textContent = 'notification';
-    let data = event.target.data;
+    let value = event.target.data;
     // Convert raw data bytes to character values and use these to 
     // construct a string.
-    /*
+    
     let str = "";
-    for (let i = 0; i < data.byteLength; i++) {
-        str += String.fromCharCode(data.getUint8(i));
+    for (let i = 0; i < value.byteLength; i++) {
+        str += String.fromCharCode(value.getUint8(i));
     }
-    */
+    
     //window.term_.io.print(str);
     //console.log(str);
-    //document.getElementById("BT").textContent = str;
+    document.getElementById("BT").textContent = str;
     
-    for(var i=0;i < data.byteLength;i=i+1){
-        var theByte = String.fromCharCode(data.getUint8(i));
-        //console.log('Data: ', theByte);
-        document.getElementById("BT").textContent = theByte;
-        raw.push(theByte);
+    for(var i=0;i < str.length;i=i+1){
+        //console.log('Data: ', str[i]);
+        document.getElementById("QTN").textContent = str[i];
+        raw.push(str[i]);
         
-        if(theByte === '{'.charCodeAt(0)){
+        if(str[i].charCodeAt(0) === '{'.charCodeAt(0)){
             start = 1;
             //console.log("STARTED");
+            document.getElementById("QTN").textContent = "STARTED";
         }
         
-        if(theByte === '}'.charCodeAt(0)){
+        if(str[i].charCodeAt(0) === '}'.charCodeAt(0)){
             end = 1;
             //console.log("ENDED");
+            document.getElementById("QTN").textContent = "ENDED";
         }
         
         if(start === 1 && end === 1){
@@ -189,11 +190,13 @@ function handleNotifications(event) {
                 date: Date.now()
             };
             
-            document.getElementById("BT").textContent = JSON.stringify(toSend);
+            document.getElementById("QTN").textContent = JSON.stringify(toSend);
             
             raw = [];
         }
+        
     }
+    
 }
 
 function nusSendString(s) {
