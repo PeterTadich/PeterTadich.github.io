@@ -163,7 +163,7 @@ function handleNotifications(event) {
     for(var i=0;i < str.length;i=i+1){
         //console.log('Data: ', str[i]);
         document.getElementById("QTN").textContent = str[i];
-        /*
+        
         raw.push(str[i]);
         
         if(str[i].charCodeAt(0) === '{'.charCodeAt(0)){
@@ -178,9 +178,12 @@ function handleNotifications(event) {
             document.getElementById("QTN").textContent = "ENDED";
         }
         
+        
         if(start === 1 && end === 1){
             start = 0;
             end = 0;
+            
+            /*
             var msg = JSON.parse(raw.join(""));
             
             toSend = {
@@ -193,10 +196,13 @@ function handleNotifications(event) {
             };
             
             document.getElementById("QTN").textContent = JSON.stringify(toSend);
+            */
+            
+            document.getElementById("QTN").textContent = raw.join("");
             
             raw = [];
         }
-        */
+        
     }
     
 }
