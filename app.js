@@ -186,7 +186,7 @@ function handleNotifications(event) {
             raw.push("\"");
             raw.unshift("\"");
             
-            //document.getElementById("QTN").textContent = raw.join("");
+            document.getElementById("QTN").textContent = raw.join("");
             
             const me = '{"result":true, "count":42}';
             const obj = JSON.parse(me);
