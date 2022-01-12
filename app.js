@@ -162,6 +162,7 @@ function handleNotifications(event) {
     for(var i=0;i < data.byteLength;i=i+1){
         var theByte = String.fromCharCode(data.getUint8(i));
         //console.log('Data: ', theByte);
+        document.getElementById("BT").textContent = theByte;
         raw.push(theByte);
         
         if(theByte === '{'.charCodeAt(0)){
