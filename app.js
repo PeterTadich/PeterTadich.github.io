@@ -185,8 +185,8 @@ function handleNotifications(event) {
             
             document.getElementById("QTN").textContent = "here0";
             
-            raw.push("'");
-            raw.unshift("'");
+            raw.push("\"");
+            raw.unshift("\"");
             
             document.getElementById("QTN").textContent = raw.join("");
             
@@ -194,6 +194,7 @@ function handleNotifications(event) {
             
             document.getElementById("QTN").textContent = "here1";
             
+            /*
             toSend = {
                 type: "message",
                 n: msg.n,
@@ -203,9 +204,11 @@ function handleNotifications(event) {
                 date: Date.now()
             };
             
+            
             document.getElementById("QTN").textContent = "here2";
             
             document.getElementById("QTN").textContent = JSON.stringify(toSend);
+            */
             
             //document.getElementById("QTN").textContent = raw.join("");
             
