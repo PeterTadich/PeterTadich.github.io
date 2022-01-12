@@ -15,6 +15,7 @@ function cube3D(w,q,dt){
         cube.offset = [[w[0][0]],[w[1][0]],[w[2][0]]];
     }
     
+    /*
     //angular velocity
     var Rk = [
         [cube.T.T0[0][0],cube.T.T0[0][1],cube.T.T0[0][2]],
@@ -30,6 +31,7 @@ function cube3D(w,q,dt){
     }
     
     var q = unitQuaternionFromRotationMatrix(Rk1);
+    */
     
     //quaternion
     var Rk1 = rotationMatrixFromUnitQuaternion(q);
