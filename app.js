@@ -146,10 +146,10 @@ var raw = [];
 function handleNotifications(event) {
     //console.log('notification');
     document.getElementById("BT").textContent = 'notification';
-    let value = event.target.data;
+    
+    let value = event.target.value;
     // Convert raw data bytes to character values and use these to 
     // construct a string.
-    
     let str = "";
     for (let i = 0; i < value.byteLength; i++) {
         str += String.fromCharCode(value.getUint8(i));
@@ -159,6 +159,7 @@ function handleNotifications(event) {
     //console.log(str);
     document.getElementById("BT").textContent = str;
     
+    /*
     for(var i=0;i < str.length;i=i+1){
         //console.log('Data: ', str[i]);
         document.getElementById("QTN").textContent = str[i];
@@ -194,7 +195,7 @@ function handleNotifications(event) {
             
             raw = [];
         }
-        
+        */
     }
     
 }
