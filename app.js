@@ -160,7 +160,7 @@ function handleNotifications(event) {
     //document.getElementById("BT").textContent = str;
     
     for(var i=0;i < data.byteLength;i=i+1){
-        var theByte = String.fromCharCode(data.getUint8(i);
+        var theByte = String.fromCharCode(data.getUint8(i));
         //console.log('Data: ', theByte);
         raw.push(theByte);
         
