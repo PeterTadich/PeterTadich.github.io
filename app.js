@@ -221,6 +221,8 @@ function handleNotifications(event) {
             //document.getElementById("QTN").textContent = JSON.stringify(toSend);
             document.getElementById("QTN").textContent = JSON.stringify(msg);
             
+            q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
+            
             //document.getElementById("QTN").textContent = raw.join("");
             
             raw = [];
