@@ -183,8 +183,8 @@ function handleNotifications(event) {
             start = 0;
             end = 0;
             
-            raw.push("'");
-            raw.unshift("'");
+            raw.push("\"");
+            raw.unshift("\"");
             
             const me = '{"result":true, "count":42}';
             const obj = JSON.parse(me);
