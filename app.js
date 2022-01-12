@@ -197,9 +197,13 @@ function handleNotifications(event) {
             
             document.getElementById("QTN").textContent = "here1";
             
-            //var msg = JSON.parse(raw.join(""));
+            document.getElementById("QTN").textContent = JSON.stringify({ t: 15, f: 16 });
             
             document.getElementById("QTN").textContent = "here2";
+            
+            //var msg = JSON.parse(raw.join(""));
+            
+            document.getElementById("QTN").textContent = "here3";
             
             /*
             toSend = {
