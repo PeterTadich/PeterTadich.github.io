@@ -168,8 +168,9 @@ function handleNotifications(event) {
             start = 1;
             //console.log("STARTED");
             document.getElementById("QTN").textContent = "STARTED";
-            
-            raw = [];
+        }
+        
+        if(start === 1){
             raw.push(str[i]);
         }
         
@@ -189,21 +190,21 @@ function handleNotifications(event) {
             const me = '{"result":true, "count":42}';
             const obj = JSON.parse(me);
             
-            document.getElementById("QTN").textContent = "here0";
+            //document.getElementById("QTN").textContent = "here0";
             
-            document.getElementById("QTN").textContent = JSON.stringify({ x: 5, y: 6 });
+            //document.getElementById("QTN").textContent = JSON.stringify({ x: 5, y: 6 });
             
-            document.getElementById("QTN").textContent = "here1";
+            //document.getElementById("QTN").textContent = "here1";
             
-            document.getElementById("QTN").textContent = JSON.stringify({ t: 15, f: 16 });
+            //document.getElementById("QTN").textContent = JSON.stringify({ t: 15, f: 16 });
             
-            document.getElementById("QTN").textContent = "here2";
+            //document.getElementById("QTN").textContent = "here2";
             
-            document.getElementById("QTN").textContent = raw.join("");
+            //document.getElementById("QTN").textContent = raw.join("");
             
             var msg = JSON.parse(raw.join(""));
             
-            document.getElementById("QTN").textContent = "here3";
+            //document.getElementById("QTN").textContent = "here3";
             
             /*
             toSend = {
@@ -216,7 +217,7 @@ function handleNotifications(event) {
             };
             */
             
-            document.getElementById("QTN").textContent = "here4";
+            //document.getElementById("QTN").textContent = "here4";
             
             //document.getElementById("QTN").textContent = JSON.stringify(toSend);
             document.getElementById("QTN").textContent = JSON.stringify(msg);
@@ -224,6 +225,8 @@ function handleNotifications(event) {
             q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
             
             //document.getElementById("QTN").textContent = raw.join("");
+            
+            raw = [];
         }
         
     }
