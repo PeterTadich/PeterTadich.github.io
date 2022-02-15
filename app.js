@@ -164,12 +164,13 @@ function handleNotifications(event) {
         //console.log('Data: ', str[i]);
         document.getElementById("QTN").textContent = str[i];
         
-        raw.push(str[i]);
-        
         if(str[i].charCodeAt(0) === '{'.charCodeAt(0)){
             start = 1;
             //console.log("STARTED");
             document.getElementById("QTN").textContent = "STARTED";
+            
+            raw = [];
+            raw.push(str[i]);
         }
         
         if(str[i].charCodeAt(0) === '}'.charCodeAt(0)){
@@ -177,7 +178,6 @@ function handleNotifications(event) {
             //console.log("ENDED");
             document.getElementById("QTN").textContent = "ENDED";
         }
-        
         
         if(start === 1 && end === 1){
             start = 0;
@@ -224,8 +224,6 @@ function handleNotifications(event) {
             q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
             
             //document.getElementById("QTN").textContent = raw.join("");
-            
-            raw = [];
         }
         
     }
