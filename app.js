@@ -97,7 +97,7 @@ function connect() {
                                           handleNotifications);
         connected = true;
         //window.term_.io.println('\r\n' + bleDevice.name + ' Connected.');
-        nusSendString('\r');
+        //nusSendString('\r');
         setConnButtonState(true);
     })
     .catch(error => {
@@ -162,12 +162,12 @@ function handleNotifications(event) {
     
     for(var i=0;i < str.length;i=i+1){
         //console.log('Data: ', str[i]);
-        document.getElementById("QTN").textContent = str[i];
+        //document.getElementById("QTN").textContent = str[i];
         
         if(str[i].charCodeAt(0) === '{'.charCodeAt(0)){
             start = 1;
             //console.log("STARTED");
-            document.getElementById("QTN").textContent = "STARTED";
+            //document.getElementById("QTN").textContent = "STARTED";
         }
         
         if(start === 1){
@@ -177,7 +177,7 @@ function handleNotifications(event) {
         if(str[i].charCodeAt(0) === '}'.charCodeAt(0)){
             end = 1;
             //console.log("ENDED");
-            document.getElementById("QTN").textContent = "ENDED";
+            //document.getElementById("QTN").textContent = "ENDED";
         }
         
         if(start === 1 && end === 1){
@@ -187,8 +187,8 @@ function handleNotifications(event) {
             //raw.push("\"");
             //raw.unshift("\"");
             
-            const me = '{"result":true, "count":42}';
-            const obj = JSON.parse(me);
+            //const me = '{"result":true, "count":42}';
+            //const obj = JSON.parse(me);
             
             //document.getElementById("QTN").textContent = "here0";
             
@@ -222,9 +222,16 @@ function handleNotifications(event) {
             //document.getElementById("QTN").textContent = JSON.stringify(toSend);
             document.getElementById("QTN").textContent = JSON.stringify(msg);
             
-            q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
+            document.getElementById('ax').innerHTML = msg.ax;
+            document.getElementById('ay').innerHTML = msg.ay;
+            document.getElementById('az').innerHTML = msg.az;
+            document.getElementById('n').innerHTML = msg.n;
+            document.getElementById('ex').innerHTML = msg.ex;
+            document.getElementById('ey').innerHTML = msg.ey;
+            document.getElementById('ez').innerHTML = msg.ez;
+            document.getElementById('Kp').innerHTML = msg.Kp;
             
-            //document.getElementById("QTN").textContent = raw.join("");
+            q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
             
             raw = [];
         }
