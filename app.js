@@ -222,14 +222,14 @@ function handleNotifications(event) {
             //document.getElementById("QTN").textContent = JSON.stringify(toSend);
             document.getElementById("QTN").textContent = msg.Kp;
             
-            document.getElementById('ax').innerText = msg.ax;
-            document.getElementById('ay').innerText = msg.ay;
-            document.getElementById('az').innerText = msg.az;
-            document.getElementById('n').innerText = msg.n;
-            document.getElementById('ex').innerText = msg.ex;
-            document.getElementById('ey').innerText = msg.ey;
-            document.getElementById('ez').innerText = msg.ez;
-            document.getElementById('Kp').innerText = msg.Kp;
+            document.getElementById('ax').textContent = msg.ax;
+            document.getElementById('ay').textContent = msg.ay;
+            document.getElementById('az').textContent = msg.az;
+            document.getElementById('n').textContent = msg.n;
+            document.getElementById('ex').textContent = msg.ex;
+            document.getElementById('ey').textContent = msg.ey;
+            document.getElementById('ez').textContent = msg.ez;
+            document.getElementById('Kp').textContent = msg.Kp;
             
             q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
             
