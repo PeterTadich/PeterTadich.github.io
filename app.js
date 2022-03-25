@@ -220,7 +220,7 @@ function handleNotifications(event) {
             //document.getElementById("QTN").textContent = "here4";
             
             //document.getElementById("QTN").textContent = JSON.stringify(toSend);
-            document.getElementById("QTN").textContent = JSON.stringify(msg);
+            document.getElementById("QTN").textContent = msg.Kp;
             
             document.getElementById('ax').innerHTML = msg.ax;
             document.getElementById('ay').innerHTML = msg.ay;
