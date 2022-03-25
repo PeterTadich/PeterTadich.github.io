@@ -157,7 +157,7 @@ function handleNotifications(event) {
     
     //window.term_.io.print(str);
     //console.log(str);
-    document.getElementById("BT").textContent = str;
+    //document.getElementById("BT").textContent = str;
     
     
     for(var i=0;i < str.length;i=i+1){
@@ -222,14 +222,14 @@ function handleNotifications(event) {
             //document.getElementById("QTN").textContent = JSON.stringify(toSend);
             document.getElementById("QTN").textContent = msg.Kp;
             
-            document.getElementById('ax').innerHTML = msg.ax;
-            document.getElementById('ay').innerHTML = msg.ay;
-            document.getElementById('az').innerHTML = msg.az;
-            document.getElementById('n').innerHTML = msg.n;
-            document.getElementById('ex').innerHTML = msg.ex;
-            document.getElementById('ey').innerHTML = msg.ey;
-            document.getElementById('ez').innerHTML = msg.ez;
-            document.getElementById('Kp').innerHTML = msg.Kp;
+            document.getElementById('ax').innerText = msg.ax;
+            document.getElementById('ay').innerText = msg.ay;
+            document.getElementById('az').innerText = msg.az;
+            document.getElementById('n').innerText = msg.n;
+            document.getElementById('ex').innerText = msg.ex;
+            document.getElementById('ey').innerText = msg.ey;
+            document.getElementById('ez').innerText = msg.ez;
+            document.getElementById('Kp').innerText = msg.Kp;
             
             q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
             
