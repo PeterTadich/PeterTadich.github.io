@@ -222,16 +222,16 @@ function handleNotifications(event) {
             //document.getElementById("QTN").textContent = JSON.stringify(toSend);
             document.getElementById("QTN").textContent = msg.Kp;
             
-            document.getElementById('ax').textContent = msg.ax;
-            document.getElementById('ay').textContent = msg.ay;
-            document.getElementById('az').textContent = msg.az;
-            document.getElementById('n').textContent = msg.n;
-            document.getElementById('ex').textContent = msg.ex;
-            document.getElementById('ey').textContent = msg.ey;
-            document.getElementById('ez').textContent = msg.ez;
-            document.getElementById('Kp').textContent = msg.Kp;
+            document.getElementById('ax').innerHTML = msg.ax;
+            document.getElementById('ay').innerHTML = msg.ay;
+            document.getElementById('az').innerHTML = msg.az;
+            document.getElementById('n').innerHTML = msg.n;
+            document.getElementById('ex').innerHTML = msg.ex;
+            document.getElementById('ey').innerHTML = msg.ey;
+            document.getElementById('ez').innerHTML = msg.ez;
+            document.getElementById('Kp').innerHTML = msg.Kp;
             
-            q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
+            //q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
             
             raw = [];
         }
