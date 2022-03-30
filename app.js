@@ -230,6 +230,7 @@ function handleNotifications(event) {
             document.getElementById('ey').innerHTML = msg.ey;
             document.getElementById('ez').innerHTML = msg.ez;
             document.getElementById('Kp').innerHTML = msg.Kp;
+            document.getElementById('Bin').innerHTML = msg.Bin;
             
             //q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
             
