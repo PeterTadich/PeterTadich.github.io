@@ -222,6 +222,7 @@ function handleNotifications(event) {
             //document.getElementById("QTN").textContent = JSON.stringify(toSend);
             document.getElementById("QTN").textContent = msg.Kp;
             
+            /*
             document.getElementById('ax').innerHTML = msg.ax;
             document.getElementById('ay').innerHTML = msg.ay;
             document.getElementById('az').innerHTML = msg.az;
@@ -229,6 +230,8 @@ function handleNotifications(event) {
             document.getElementById('ex').innerHTML = msg.ex;
             document.getElementById('ey').innerHTML = msg.ey;
             document.getElementById('ez').innerHTML = msg.ez;
+            */
+            
             document.getElementById('Kp').innerHTML = msg.Kp;
             document.getElementById('Bin').innerHTML = msg.Bin;
             
