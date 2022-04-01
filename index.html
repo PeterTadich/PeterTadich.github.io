@@ -14,7 +14,7 @@
             </br>
             <img src="HP.PNG" width="460" height="345">
             <h2>INTEGRATED CONTROLLER</h2>
-            <div id="serviceBrake"><p>STATUS: SERVICE BRAKE INACTIVE</p></div>
+            <div id="status"><p>STATUS: SERVICE BRAKE INACTIVE</p></div>
             <p><label for="gain">GAIN:</label><input type="number" id="gain" name="gain" min="1" max="10" step="0.01" value="5.0">&nbsp;&nbsp;<button class="buttonGain" onclick="setGain()">SET</button></p>
             <p><button class="buttonTrailerBrakes" id="TBs" onclick="toggleTrailerBrakes()">TRAILER BRAKES: ACTIVATE</button></p>
           </div>
@@ -26,12 +26,13 @@
             var trailerBrakes = 0; //inactive
             
             function changeBGColor() {
-                    document.getElementById('serviceBrake').innerHTML = "STATUS: SERVICE BRAKE ACTIVE";
-                    document.getElementById('serviceBrake').style.color = 'red';
+                    document.getElementById('status').innerHTML = "STATUS: SERVICE BRAKE ACTIVE";
+                    document.getElementById('status').style.color = 'red';
             }
             
             function setGain(){
                 // Send to integrated controller.
+                document.getElementById('status').innerHTML = "STATUS: GAIN " + document.getElementById('gain').value;
                 nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
             }
             
@@ -39,13 +40,17 @@
                 // toggle
                 if(trailerBrakes === 0){
                     trailerBrakes = 1; //activate
-                    document.getElementById('serviceBrake').innerHTML = "STATUS: SERVICE BRAKE ACTIVATED";
-                    document.getElementById('serviceBrake').style.color = 'red';
+                    document.getElementById('status').innerHTML = "<p>STATUS: TRAILER BRAKES ACTIVATED</p>";
+                    document.getElementById('status').style.color = 'red';
+                    document.getElementById('TBs').value = "TRAILER BRAKES: DEACTIVATE";
+                    document.getElementById('TBs').style.color = '#040707';
                     //nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
                 } else {
                     trailerBrakes = 0; //make inactive
-                    document.getElementById('serviceBrake').innerHTML = "STATUS: SERVICE BRAKE INACTIVE";
-                    document.getElementById('serviceBrake').style.color = 'black';
+                    document.getElementById('status').innerHTML = "<p>STATUS: TRAILER BRAKES INACTIVE</p>";
+                    document.getElementById('status').style.color = 'black';
+                    document.getElementById('TBs').value = "TRAILER BRAKES: ACTIVATE";
+                    document.getElementById('TBs').style.color = '#F22233';
                     //nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
                 }
             }
