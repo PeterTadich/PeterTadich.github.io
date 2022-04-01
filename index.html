@@ -15,7 +15,7 @@
             <img src="HP.PNG" width="460" height="345">
             <h2>INTEGRATED CONTROLLER</h2>
             <p><button class="buttonBluetooth" type="button" id="clientConnectButton" onclick="connectionToggle()">Connect</button></p>
-            <p><textarea id="BT" rows="4" cols="50">BLUETOOTH STATUS</textarea></p>
+            <p><textarea id="BT" rows="1" cols="25">BLUETOOTH STATUS</textarea></p>
             <div id="status"><p>STATUS: SERVICE BRAKE INACTIVE</p></div>
             <p><label for="gain">GAIN:</label><input type="number" id="gain" name="gain" min="1" max="10" step="0.01" value="5.0">&nbsp;&nbsp;<button class="buttonGain" onclick="setGain()">SET</button></p>
             <p><button class="buttonTrailerBrakes" id="TBs" onclick="toggleTrailerBrakes()">TRAILER BRAKES: ACTIVATE</button></p>
@@ -34,8 +34,9 @@
             
             function setGain(){
                 // Send to integrated controller.
-                document.getElementById('status').innerHTML = "STATUS: GAIN " + document.getElementById('gain').value;
-                nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
+                document.getElementById('status').innerHTML = "<p>STATUS: GAIN " + document.getElementById('gain').value + "</p>";
+                //nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
+                nusSendString(Number.parseFloat(document.getElementById('gain').value) + " " + Number.parseFloat(trailerBrakes) + '\n');
             }
             
             function toggleTrailerBrakes(){
@@ -46,14 +47,14 @@
                     document.getElementById('status').style.color = 'red';
                     document.getElementById('TBs').innerHTML = "TRAILER BRAKES: DEACTIVATE";
                     document.getElementById('TBs').style.backgroundColor = '#040707';
-                    //nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
+                    nusSendString(Number.parseFloat(document.getElementById('gain').value) + " " + Number.parseFloat(trailerBrakes) + '\n');
                 } else {
                     trailerBrakes = 0; //make inactive
                     document.getElementById('status').innerHTML = "<p>STATUS: TRAILER BRAKES INACTIVE</p>";
                     document.getElementById('status').style.color = 'black';
                     document.getElementById('TBs').innerHTML = "TRAILER BRAKES: ACTIVATE";
                     document.getElementById('TBs').style.backgroundColor = '#F22233';
-                    //nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
+                    nusSendString(Number.parseFloat(document.getElementById('gain').value) + " " + Number.parseFloat(trailerBrakes) + '\n');
                 }
             }
         </script>

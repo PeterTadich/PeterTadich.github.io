@@ -229,7 +229,6 @@ function handleNotifications(event) {
 function nusSendString(s) {
     if(bleDevice && bleDevice.gatt.connected) {
         //console.log("send: " + s);
-        document.getElementById("BT").textContent = "send: " + s;
         let val_arr = new Uint8Array(s.length)
         for (let i = 0; i < s.length; i++) {
             let val = s[i].charCodeAt(0);
