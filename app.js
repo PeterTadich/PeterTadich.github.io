@@ -205,20 +205,20 @@ function handleNotifications(event) {
             
             document.getElementById('gain').value = msg.Kp;
             
-            if(Number.parseFloat(msg.RITBs) === 0.0){ //logic low = active brakes
-                document.getElementById('status').innerHTML = "<p>STATUS: TRAILER BRAKES ACTIVE</p>";
-                document.getElementById('status').style.color = 'red';
+            if(Number.parseFloat(msg.RITBs) === 0.0){ //logic low = active brakes (independent) Hardware
+                document.getElementById('statusIndependentHard').innerHTML = "<p>STATUS: HARD INDEPENDENT ACTIVE</p>";
+                document.getElementById('statusIndependentHard').style.color = 'red';
             } else {
-                document.getElementById('status').innerHTML = "<p>STATUS: TRAILER BRAKES INACTIVE</p>";
-                document.getElementById('status').style.color = 'black';
+                document.getElementById('statusIndependentHard').innerHTML = "<p>STATUS: HARD INDEPENDENT INACTIVE</p>";
+                document.getElementById('statusIndependentHard').style.color = 'black';
             }
             
-            if(Number.parseFloat(msg.Bin) === 0.0){
-                document.getElementById('status').innerHTML = "<p>STATUS: SERVICE BRAKE ACTIVE</p>";
-                document.getElementById('status').style.color = 'red';
+            if(Number.parseFloat(msg.Bin) === 0.0){ //logic low = active brakes (service)
+                document.getElementById('statusService').innerHTML = "<p>STATUS: SERVICE BRAKE ACTIVE</p>";
+                document.getElementById('statusService').style.color = 'red';
             } else {
-                document.getElementById('status').innerHTML = "<p>STATUS: SERVICE BRAKE INACTIVE</p>";
-                document.getElementById('status').style.color = 'black';
+                document.getElementById('statusService').innerHTML = "<p>STATUS: SERVICE BRAKE INACTIVE</p>";
+                document.getElementById('statusService').style.color = 'black';
             }
             
             raw = [];
