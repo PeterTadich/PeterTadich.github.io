@@ -1,99 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>WebSocket Test</title>
-        <style type="text/css">
-            /* IMPORTANT: */
-            *{ margin: 0; padding: 0; border: 0;}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body>
 
-            /* IMPORTANT: */
-            html, body {
-                height:100%;
-            }
-            
-            #container{
-                position: relative;
-                height: 100%;
-                width: 100%;
-            }
-            #robotCanvas{
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                !border: 1px solid red;
-            }
-        </style>
-        <!-- support files -->
-        <script type="text/javascript" src="matrixAlgebra.js"></script>
-        <script type="text/javascript" src="elementaryRotations.js"></script>
-        <script type="text/javascript" src="homogeneous.js"></script>
-        <script type="text/javascript" src="cube.js"></script>
-        <script type="text/javascript" src="canvasDraw.js"></script>
-        <script type="text/javascript" src="app.js"></script>
-    </head>
-    <script type="text/javascript">
-    </script>
-    <body>
-        <div id="container">
-            <button type="button" id="clientConnectButton" onclick="connectionToggle()">Connect</button>
-            <textarea id="BT" rows="4" cols="50">Bluetooth Testing</textarea>
-            <textarea id="QTN" rows="4" cols="50">Quaternion</textarea>
-            <!-- <canvas id="robotCanvas">Your browser does not support the HTML5 canvas tag.</canvas> -->
-            
-            <h3>Integrated Controller</h3>
-            
-            <!-- <div><p id="ax">ax...</p></div> -->
-            <!-- <div><p id="ay">ay...</p></div> -->
-            <!-- <div><p id="az">az...</p></div> -->
-            
-            <!-- <div><p id="n">n...</p></div> -->
-            <!-- <div><p id="ex">ex...</p></div> -->
-            <!-- <div><p id="ey">ey...</p></div> -->
-            <!-- <div><p id="ez">ez...</p></div> -->
-            
-            <div><p id="Kp">Kp...</p></div>
-            <div><p id="Bin">Bin...</p></div>
-            
-            <label for="gain">Gain [1,5]:</label>
-            <input type="number" id="gain" name="gain" min="1" max="5" step="0.01"> 
-            <button class="button" onclick="setGain()">GAIN</button>
-            <p><input type="checkbox" id="light"></p>
-            
-        </div>
-        <script type="text/javascript">
-            /*
-            var dw = 0.3;
-            var w = [[0.0],[0.0],[0.0]];
-            var q = [[0.0],[0.0],[0.0],[0.0]];
-            canvasSetup();
-            //cube3D(w,0.01);
-            
-            
-            var update = setInterval(function(){
-                cube3D(w,q,0.01);
-                //w = [[dw],[dw],[dw]];
-            },250);
-            
-            
-            //skew_symmetric_matrix
-            //ref: I:\code\spatial_v2\js\inertia\inertia.js
-            function S(X){
-                var S = [
-                    [         0.0, -1.0*X[2][0],      X[1][0]],
-                    [     X[2][0],          0.0, -1.0*X[0][0]],
-                    [-1.0*X[1][0],      X[0][0],          0.0]
-                ];
-                
-                return S;
-            }
-            */
-            
-            function setGain(){
-                // Send the msg object as a JSON-formatted string.
-                document.getElementById("QTN").textContent = Number.parseFloat(document.getElementById('gain').value);
-                nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
-            }
-        </script>
-    </body>
+<div class="row">
+  <div class="col-3 col-s-3"></div>
+
+  <div class="col-6 col-s-6">
+    </br>
+    <img src="HP.PNG" width="460" height="345">
+    <h2>INTEGRATED CONTROLLER</h2>
+    <div id="serviceBrake"><p>STATUS: SERVICE BRAKE INACTIVE</p></div>
+    <p><label for="gain">GAIN:</label><input type="number" id="gain" name="gain" min="1" max="10" step="0.01">&nbsp;&nbsp;<button class="buttonGain" onclick="setGain()">SET</button></p>
+    <p><button class="buttonSeriveBrake" id="sway" onclick="setGain()">INDEPENDENT TRAILER BRAKE: ACTIVATE</button></p>
+  </div>
+
+  <div class="col-3 col-s-3"></div>
+</div>
+
+</body>
 </html>
