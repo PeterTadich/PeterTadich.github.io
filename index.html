@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css" type="text/css" />
-</head>
-<body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css" type="text/css" />
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+    <body>
 
-<div class="row">
-  <div class="col-3 col-s-3"></div>
+        <div class="row">
+          <div class="col-3 col-s-3"></div>
 
-  <div class="col-6 col-s-6">
-    </br>
-    <img src="HP.PNG" width="460" height="345">
-    <h2>INTEGRATED CONTROLLER</h2>
-    <div id="serviceBrake"><p>STATUS: SERVICE BRAKE INACTIVE</p></div>
-    <p><label for="gain">GAIN:</label><input type="number" id="gain" name="gain" min="1" max="10" step="0.01">&nbsp;&nbsp;<button class="buttonGain" onclick="setGain()">SET</button></p>
-    <p><button class="buttonSeriveBrake" id="sway" onclick="setGain()">INDEPENDENT TRAILER BRAKE: ACTIVATE</button></p>
-  </div>
+          <div class="col-6 col-s-6">
+            </br>
+            <img src="HP.PNG" width="460" height="345">
+            <h2>INTEGRATED CONTROLLER</h2>
+            <div id="serviceBrake"><p>STATUS: SERVICE BRAKE INACTIVE</p></div>
+            <p><label for="gain">GAIN:</label><input type="number" id="gain" name="gain" min="1" max="10" step="0.01" value="5.0">&nbsp;&nbsp;<button class="buttonGain" onclick="setGain()">SET</button></p>
+            <p><button class="buttonTrailerBrakes" id="TBs" onclick="toggleTrailerBrakes()">TRAILER BRAKES: ACTIVATE</button></p>
+          </div>
 
-  <div class="col-3 col-s-3"></div>
-</div>
+          <div class="col-3 col-s-3"></div>
+        </div>
 
-</body>
+        <script type="text/javascript">
+            function changeBGColor() {
+                    document.getElementById('serviceBrake').innerHTML = "STATUS: SERVICE BRAKE ACTIVE";
+                    document.getElementById('serviceBrake').style.color = 'red';
+            }
+            
+            function setGain(){
+                // Send to integrated controller.
+                nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
+            }
+            
+            function toggleTrailerBrakes(){
+                // Send to integrated controller.
+                //if current is "ACTIVATE"
+                //
+                //else
+            }
+        </script>
+
+    </body>
 </html>

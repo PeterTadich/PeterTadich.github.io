@@ -184,43 +184,9 @@ function handleNotifications(event) {
             start = 0;
             end = 0;
             
-            //raw.push("\"");
-            //raw.unshift("\"");
-            
-            //const me = '{"result":true, "count":42}';
-            //const obj = JSON.parse(me);
-            
-            //document.getElementById("QTN").textContent = "here0";
-            
-            //document.getElementById("QTN").textContent = JSON.stringify({ x: 5, y: 6 });
-            
-            //document.getElementById("QTN").textContent = "here1";
-            
-            //document.getElementById("QTN").textContent = JSON.stringify({ t: 15, f: 16 });
-            
-            //document.getElementById("QTN").textContent = "here2";
-            
-            //document.getElementById("QTN").textContent = raw.join("");
-            
             var msg = JSON.parse(raw.join(""));
             
-            //document.getElementById("QTN").textContent = "here3";
-            
-            /*
-            toSend = {
-                type: "message",
-                n: msg.n,
-                ex: msg.ex,
-                ey: msg.ey,
-                ez: msg.ez,
-                date: Date.now()
-            };
-            */
-            
-            //document.getElementById("QTN").textContent = "here4";
-            
-            //document.getElementById("QTN").textContent = JSON.stringify(toSend);
-            document.getElementById("QTN").textContent = msg.Kp;
+            //document.getElementById("QTN").textContent = msg.Kp;
             
             /*
             document.getElementById('ax').innerHTML = msg.ax;
@@ -232,10 +198,12 @@ function handleNotifications(event) {
             document.getElementById('ez').innerHTML = msg.ez;
             */
             
-            document.getElementById('Kp').innerHTML = msg.Kp;
-            document.getElementById('Bin').innerHTML = msg.Bin;
+            //document.getElementById('Kp').innerHTML = msg.Kp;
+            //document.getElementById('Bin').innerHTML = msg.Bin;
             
             //q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
+            
+            document.getElementById('gain').value = msg.Kp;
             
             raw = [];
         }
