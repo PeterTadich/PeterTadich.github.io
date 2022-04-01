@@ -203,7 +203,7 @@ function handleNotifications(event) {
             
             //q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
             
-            document.getElementById('gain').value = msg.Kp;
+            document.getElementById('statusGain').innerHTML = "<p>STATUS: GAIN " + msg.Kp + "</p>";
             
             if(Number.parseFloat(msg.RITBs) === 0.0){ //logic low = active brakes (independent) Hardware
                 document.getElementById('statusIndependentHard').innerHTML = "<p>STATUS: HARD INDEPENDENT ACTIVE</p>";
