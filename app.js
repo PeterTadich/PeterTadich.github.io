@@ -205,18 +205,20 @@ function handleNotifications(event) {
             
             document.getElementById('gain').value = msg.Kp;
             
-            if((Number.parseFloat(msg.Bin) === 0.0)||(Number.parseFloat(msg.ITBs) === 0.0)){ //logic low = active brakes
-                trailerBrakes = 1; //active
+            if(Number.parseFloat(msg.RITBs) === 0.0){ //logic low = active brakes
                 document.getElementById('status').innerHTML = "<p>STATUS: TRAILER BRAKES ACTIVE</p>";
                 document.getElementById('status').style.color = 'red';
-                document.getElementById('TBs').innerHTML = "TRAILER BRAKES: DEACTIVATE";
-                document.getElementById('TBs').style.backgroundColor = '#040707';
             } else {
-                trailerBrakes = 0; //make inactive
                 document.getElementById('status').innerHTML = "<p>STATUS: TRAILER BRAKES INACTIVE</p>";
                 document.getElementById('status').style.color = 'black';
-                document.getElementById('TBs').innerHTML = "TRAILER BRAKES: ACTIVATE";
-                document.getElementById('TBs').style.backgroundColor = '#F22233';
+            }
+            
+            if(Number.parseFloat(msg.Bin) === 0.0){
+                document.getElementById('status').innerHTML = "<p>STATUS: SERVICE BRAKE ACTIVE</p>";
+                document.getElementById('status').style.color = 'red';
+            } else {
+                document.getElementById('status').innerHTML = "<p>STATUS: SERVICE BRAKE INACTIVE</p>";
+                document.getElementById('status').style.color = 'black';
             }
             
             raw = [];

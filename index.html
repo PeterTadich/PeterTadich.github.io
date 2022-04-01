@@ -27,11 +27,6 @@
         <script type="text/javascript">
             var trailerBrakes = 0; //inactive
             
-            function changeBGColor() {
-                    document.getElementById('status').innerHTML = "STATUS: SERVICE BRAKE ACTIVE";
-                    document.getElementById('status').style.color = 'red';
-            }
-            
             function setGain(){
                 // Send to integrated controller.
                 document.getElementById('status').innerHTML = "<p>STATUS: GAIN " + document.getElementById('gain').value + "</p>";
