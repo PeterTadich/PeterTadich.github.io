@@ -23,6 +23,8 @@
         </div>
 
         <script type="text/javascript">
+            var trailerBrakes = 0; //inactive
+            
             function changeBGColor() {
                     document.getElementById('serviceBrake').innerHTML = "STATUS: SERVICE BRAKE ACTIVE";
                     document.getElementById('serviceBrake').style.color = 'red';
@@ -34,10 +36,18 @@
             }
             
             function toggleTrailerBrakes(){
-                // Send to integrated controller.
-                //if current is "ACTIVATE"
-                //
-                //else
+                // toggle
+                if(trailerBrakes === 0){
+                    trailerBrakes = 1; //activate
+                    document.getElementById('serviceBrake').innerHTML = "STATUS: SERVICE BRAKE ACTIVATED";
+                    document.getElementById('serviceBrake').style.color = 'red';
+                    //nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
+                } else {
+                    trailerBrakes = 0; //make inactive
+                    document.getElementById('serviceBrake').innerHTML = "STATUS: SERVICE BRAKE INACTIVE";
+                    document.getElementById('serviceBrake').style.color = 'black';
+                    //nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
+                }
             }
         </script>
 
