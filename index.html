@@ -42,14 +42,14 @@
                     trailerBrakes = 1; //activate
                     document.getElementById('status').innerHTML = "<p>STATUS: TRAILER BRAKES ACTIVATED</p>";
                     document.getElementById('status').style.color = 'red';
-                    document.getElementById('TBs').value = "TRAILER BRAKES: DEACTIVATE";
+                    document.getElementById('TBs').innerHTML = "TRAILER BRAKES: DEACTIVATE";
                     document.getElementById('TBs').style.backgroundColor = '#040707';
                     //nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
                 } else {
                     trailerBrakes = 0; //make inactive
                     document.getElementById('status').innerHTML = "<p>STATUS: TRAILER BRAKES INACTIVE</p>";
                     document.getElementById('status').style.color = 'black';
-                    document.getElementById('TBs').value = "TRAILER BRAKES: ACTIVATE";
+                    document.getElementById('TBs').innerHTML = "TRAILER BRAKES: ACTIVATE";
                     document.getElementById('TBs').style.backgroundColor = '#F22233';
                     //nusSendString(Number.parseFloat(document.getElementById('gain').value) + '\n');
                 }
