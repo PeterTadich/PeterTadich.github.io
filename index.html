@@ -32,7 +32,7 @@
         </div>
 
         <script type="text/javascript">
-            var trailerBrakes = 0; //inactive
+            var trailerBrakes = 1; //inactive
             
             function setPWM(){
                 // Send to integrated controller.
@@ -48,15 +48,15 @@
             
             function toggleTrailerBrakes(){ //independent (software)
                 // toggle
-                if(trailerBrakes === 0){
-                    trailerBrakes = 1; //activate
+                if(trailerBrakes === 1){
+                    trailerBrakes = 0; //activate
                     document.getElementById('statusIndependentSoft').innerHTML = "<p>STATUS: SOFT INDEPENDENT ACTIVE</p>";
                     document.getElementById('statusIndependentSoft').style.color = 'red';
                     document.getElementById('TBs').innerHTML = "TRAILER BRAKES: DEACTIVATE";
                     document.getElementById('TBs').style.backgroundColor = '#040707';
                     nusSendString(Number.parseFloat(document.getElementById('gain').value) + " " + Number.parseFloat(trailerBrakes) + " " + Number.parseInt(document.getElementById('PWM').value) + '\n');
                 } else {
-                    trailerBrakes = 0; //deactivate
+                    trailerBrakes = 1; //deactivate
                     document.getElementById('statusIndependentSoft').innerHTML = "<p>STATUS: SOFT INDEPENDENT INACTIVE</p>";
                     document.getElementById('statusIndependentSoft').style.color = 'black';
                     document.getElementById('TBs').innerHTML = "TRAILER BRAKES: ACTIVATE";
