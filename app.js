@@ -203,6 +203,7 @@ function handleNotifications(event) {
             
             //q = [[msg.n],[msg.ex],[msg.ey],[msg.ez]];
             
+            document.getElementById('statusPWM').innerHTML = "<p>STATUS: PWM " + Number.parseFloat(msg.rPWM)*100.0 + "</p>";
             document.getElementById('statusGain').innerHTML = "<p>STATUS: GAIN " + msg.Kp + "</p>";
             
             if(Number.parseFloat(msg.RITBs) === 0.0){ //logic low = active brakes (independent) Hardware

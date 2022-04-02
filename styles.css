@@ -68,6 +68,17 @@ h2,p{
   font-size: 16px;
 }
 
+.buttonPWM {
+  background-color: #040707;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .buttonGain {
   background-color: #040707;
   border: none;
