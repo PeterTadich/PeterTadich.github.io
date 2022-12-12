@@ -166,6 +166,7 @@ function handleNotifications(event) {
         
         if(str[i].charCodeAt(0) === '{'.charCodeAt(0)){
             start = 1;
+            end = 0; //may have received "{" before "}"
             //console.log("STARTED");
             //document.getElementById("QTN").textContent = "STARTED";
         }
